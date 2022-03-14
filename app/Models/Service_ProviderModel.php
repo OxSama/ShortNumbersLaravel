@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service_ProviderModel extends Model
 {
+    protected $table = 'service_provider';
     use HasFactory;
 }

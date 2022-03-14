@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CustomerPageController;
+use App\Models\CategoryModel;
+use App\Models\NumbModel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +20,21 @@ Route::get('/', function () {
     return view('newWelcome');
 });
 Route::get('/customer',function(){
+    NumbModel::categorizeNumbers();
     $whatToView = request('view');
     $availablePackages = request('availablePackages');
+    $platinum=CategoryModel::where('categ','=','platinum')->first();
+    $golden=CategoryModel::where('categ','=','golden')->first();
+    $silver=CategoryModel::where('categ','=','silver')->first();
+    $bronze=CategoryModel::where('categ','=','bronze')->first();
     return view('customer',
     [
         'whatToView' => $whatToView,
-        'availablePackages' => $availablePackages
-    ]
-);
+        'availablePackages' => $availablePackages,
+        'platinum' => $platinum,
+        'golden' => $golden,
+        'bronze' => $bronze,
+        'silver' => $silver
+    ]);
 });
 Route::post('licenseRenewal',[CustomerPageController::class,'handelLicenseRenewal']);

@@ -20,11 +20,11 @@
                                     <h2>البلاتينية</h2>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر تجديد باقة
+                                            <strong>{{ ($platinum->price*($platinum->renewal_fees_percentage/100)) }}$</strong></span> سعر تجديد باقة
                                     </p>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر ترخيص الباقة
+                                            <strong>{{ $platinum->price }}$</strong></span> سعر ترخيص الباقة
                                     </p>
 
                                 </div>
@@ -48,11 +48,11 @@
                                     <h2>الذهبية</h2>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر تجديد باقة
+                                            <strong>{{ ($golden->price*($golden->renewal_fees_percentage/100)) }}$</strong></span> سعر تجديد باقة
                                     </p>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر ترخيص الباقة
+                                            <strong>{{ $golden->price }}$</strong></span> سعر ترخيص الباقة
                                     </p>
 
                                 </div>
@@ -76,11 +76,11 @@
                                     <h2>الفضية</h2>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر تجديد باقة
+                                            <strong>{{ ($silver->price*($silver->renewal_fees_percentage/100)) }}$</strong></span> سعر تجديد باقة
                                     </p>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر ترخيص الباقة
+                                            <strong>{{ $silver->price }}$</strong></span> سعر ترخيص الباقة
                                     </p>
 
                                 </div>
@@ -105,11 +105,11 @@
                                     <h2>البرونزية</h2>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر تجديد باقة
+                                            <strong>{{ ($bronze->price*($bronze->renewal_fees_percentage/100)) }}$</strong></span> سعر تجديد باقة
                                     </p>
                                     <p class="mb-3 mt-1">
                                         <spans class="color-success">
-                                            <strong>1000$</strong></span> سعر ترخيص الباقة
+                                            <strong>{{ $bronze->price }}$</strong></span> سعر ترخيص الباقة
                                     </p>
 
                                 </div>
