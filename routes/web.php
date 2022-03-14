@@ -19,22 +19,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('newWelcome');
 });
+
 Route::get('/customer',function(){
-    NumbModel::categorizeNumbers();
+    // NumbModel::categorizeNumbers();
     $whatToView = request('view');
     $availablePackages = request('availablePackages');
+    $viewAvailable = request('viewAvailable');
     $platinum=CategoryModel::where('categ','=','platinum')->first();
     $golden=CategoryModel::where('categ','=','golden')->first();
     $silver=CategoryModel::where('categ','=','silver')->first();
     $bronze=CategoryModel::where('categ','=','bronze')->first();
+    $numbers = App\Models\NumbModel::paginate(100,['*'],'view=NumbersLicense&&viewAvailable=true&&page');
     return view('customer',
     [
         'whatToView' => $whatToView,
         'availablePackages' => $availablePackages,
+        'viewAvailable' => $viewAvailable,
         'platinum' => $platinum,
         'golden' => $golden,
         'bronze' => $bronze,
-        'silver' => $silver
+        'silver' => $silver,
+        'numbers' => $numbers
     ]);
 });
+
+
 Route::post('licenseRenewal',[CustomerPageController::class,'handelLicenseRenewal']);

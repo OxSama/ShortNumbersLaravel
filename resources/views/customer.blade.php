@@ -40,6 +40,12 @@
                     @endif
                 </section>
 
+                <section>
+                    @if ($viewAvailable == 'true')
+                        @include('includes.viewAvailable')
+                    @endif
+                </section>
+
 
 
                 <br><br><br>

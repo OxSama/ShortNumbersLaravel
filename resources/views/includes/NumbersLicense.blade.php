@@ -30,7 +30,11 @@
 
                         <div class="col-md-3"> لعرض جميع الارقام المتاحة</div>
                         <div class="col-sm-4">
-                            <sapn class="btn btn-sm btn-primary">اضغط هنا </span>
+                            <sapn class="btn btn-sm btn-primary">
+                                <a href="/customer?view=NumbersLicense&&viewAvailable=true" style="color:white">
+                                اضغط هنا
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </li>
