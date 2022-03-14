@@ -1,0 +1,86 @@
+
+    import java.util.Scanner ;
+    public class catmethod {
+	static int[] intArray = new int[5];
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+		System.out.println("Enter your num : ");
+		int num = in.nextInt();
+        int e = (num)% 10;
+		int d = ((num) %100) /10;
+		int c = (( num)%1000 )/100;
+		int b = (( num)%10000 )/1000;
+		int a = (( num)%100000 )/10000;
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+        intArray [0] = a;
+        intArray [1] = b;
+        intArray [2] = c;
+        intArray [3] = d;
+        intArray [4] = e ;
+       categorization(a,b,c,d,e);
+}
+public static void categorization(int a,int b,int c,int d,int e)
+{
+
+if ( (a==b)&&(b==c)&&(c==d)&&(d==e))
+
+{
+	System.out.println ( " your number is platinum");
+}
+
+else if ( (b==(a+1))&&(c==(b+1))&&(d==(c+1))&&(e==(d+1))) {
+	System.out.println( " your number is platinum");
+}
+else if ( ( (b==(a-1))&&(c==(b-1))&&(d==(c-1))&&(e==(d-1))) ) {
+	System.out.println( " your number is platinum");
+}
+else if ( (b!=(a+1))&&(c==(b+1))&&(d==(c+1))&&(e==(d+1))) {
+	System.out.println( " your number is golden");
+}
+else if ( (b==(a+1))&&(c==(b+1))&&(d==(c+1))&&(e!=(d+1))) {
+	System.out.println( " your number is golden");
+}
+else if ( ( (b!=(a-1))&&(c==(b-1))&&(d==(c-1))&&(e==(d-1))) ) {
+	System.out.println( " your number is golden");
+}
+else if ( ( (b ==(a-1))&&(c==(b-1))&&(d==(c-1))&&(e!=(d-1))) ) {
+	System.out.println( " your number is golden");
+}
+else
+counting(intArray );
+}
+public static void counting( int intArray[])
+
+{ int totalcount= -1;
+  for (int i=0 ; i<=4 ; i++)
+  {
+	int count = 0 ;
+	for (int j=0 ; j<=4 ; j++)
+	{
+	if ( intArray[i] == intArray[j])
+	{
+      count++;
+	if ( count > totalcount){
+   	totalcount=count;
+	}
+
+	}
+    }
+    }
+
+   if(totalcount==4)
+   {
+System.out.println( " your number is golden");
+   }
+   if(totalcount==3){
+ System.out.println( " your number is silver");
+   }
+else  {
+System.out.println( " your number is bronze");
+    }
+    }
+    }
