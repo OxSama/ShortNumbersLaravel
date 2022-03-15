@@ -25,7 +25,7 @@
                 <td>{{ $number->categ }}</td>
                 <td>{{ $number->category->price }}</td>
                 <td>%{{ $number->category->renewal_fees_percentage }}</td>
-                <td>{{ $number->id }}</td>
+                <td><a href="/customer?licenseNumber={{ $number->id }}">{{ $number->id }}</a></td>
               </tr>
               @endforeach
 

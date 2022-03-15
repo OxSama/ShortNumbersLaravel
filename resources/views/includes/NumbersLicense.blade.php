@@ -39,7 +39,7 @@
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <div class="row" style="margin-top: 12px;">
 
                         <div class="col-md-3"> للبحث عن رقم معين</div>
@@ -47,7 +47,7 @@
                             <sapn class="btn btn-sm btn-primary">اضغط هنا </span>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
             </ul>
         </section>

@@ -1,13 +1,14 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title">
-            <h1 class="title" style="font: 18px bold"> استمارة تجديد ترخيص
+            <h1 class="title" style="font: 18px bold">
+                 استمارة تجديد ترخيص الرقم {{ $numberToSubmit->number }}
             </h1>
         </div>
     </div>
     <div class="card-body">
 
-        <form action="licenseRenewal" method="POST">
+        <form action="/customer/license" method="POST">
             @csrf
             <section>
                 <div class="row">

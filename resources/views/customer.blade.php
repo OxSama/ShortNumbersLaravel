@@ -54,8 +54,11 @@
     </div>
         {{-- </section> --}}
 
+        @if ($numberToSubmit !== null)
 
         @include('includes.RenewalForm')
+        @endif
+
 
     </div>
     </div>

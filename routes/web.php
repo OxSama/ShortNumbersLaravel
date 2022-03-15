@@ -30,6 +30,7 @@ Route::get('/customer',function(){
     $silver=CategoryModel::where('categ','=','silver')->first();
     $bronze=CategoryModel::where('categ','=','bronze')->first();
     $numbers = NumbModel::with('category')->get();
+    $number = (null !== request('licenseNumber'))? NumbModel::where('id','=',request('licenseNumber'))->first() : null ;
     return view('customer',
     [
         'whatToView' => $whatToView,
@@ -39,11 +40,12 @@ Route::get('/customer',function(){
         'golden' => $golden,
         'bronze' => $bronze,
         'silver' => $silver,
-        'numbers' => $numbers
+        'numbers' => $numbers,
+        'numberToSubmit' => $number,
     ]);
 });
 
 // Route::get('/customer/',function(){});
 
 
-Route::post('licenseRenewal',[CustomerPageController::class,'handelLicenseRenewal']);
+Route::post('/customer/license',[CustomerPageController::class,'handelLicenseRenewal']);
