@@ -23,14 +23,14 @@
               <tr>
                 <th scope="row">{{ $number->number }}</th>
                 <td>{{ $number->categ }}</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ $number->category->price }}</td>
+                <td>%{{ $number->category->renewal_fees_percentage }}</td>
                 <td>{{ $number->id }}</td>
               </tr>
               @endforeach
-              {{-- paginate --}}
+
             </tbody>
           </table>
-          {{ $numbers->links() }}
+
     </div>
 </div>

@@ -151,6 +151,8 @@ class NumbModel extends Model
 }
 }
     }
-
+public function category(){
+    return $this->belongsTo(CategoryModel::class,'categ','categ');
+}
 
 }

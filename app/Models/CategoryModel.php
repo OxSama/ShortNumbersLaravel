@@ -9,4 +9,9 @@ class CategoryModel extends Model
 {
     protected $table = 'categ';
     use HasFactory;
+    public $timestamps = false;
+
+    public function numbers(){
+        return $this->hasMany(NumbModel::class,'categ','categ');
+    }
 }
